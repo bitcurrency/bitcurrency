@@ -1,0 +1,5 @@
+build
+bitcurrencyd
+bitcurrency-qt
+qrc_bitcoin.cpp
+Makefile
