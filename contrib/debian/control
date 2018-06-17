@@ -6,28 +6,28 @@ Uploaders: Micah Anderson <micah@debian.org>
 Build-Depends: debhelper,
  devscripts,
  bash-completion,
- libboost-system-dev (>> 1.35) | libboost-system1.35-dev,
+ libboost-system-dev (>> 1.52) | libboost-system1.52-dev,
  libdb4.8++-dev,
  libssl-dev,
  pkg-config,
  libminiupnpc8-dev,
- libboost-filesystem-dev (>> 1.35) | libboost-filesystem1.35-dev,
- libboost-program-options-dev (>> 1.35) | libboost-program-options1.35-dev,
- libboost-thread-dev (>> 1.35) | libboost-thread1.35-dev,
- libboost-test-dev (>> 1.35) | libboost-test1.35-dev,
- qt4-qmake,
- libqt4-dev,
+ libboost-filesystem-dev (>> 1.55) | libboost-filesystem1.55-dev,
+ libboost-program-options-dev (>> 1.55) | libboost-program-options1.55-dev,
+ libboost-thread-dev (>> 1.55) | libboost-thread1.55-dev,
+ libboost-test-dev (>> 1.55) | libboost-test1.55-dev,
+ qt5-qmake,
+ libqt5-dev,
  libqrencode-dev
 Standards-Version: 3.9.2
-Homepage: http://www.bitcurrency.co/
-Vcs-Git: git://github.com/zeded/bitcurrency.git
-Vcs-Browser: http://github.com/zeded/bitcurrency
+Homepage: http://github.com/bitcurrency/bitcurrency
+Vcs-Git: git://github.com/bitcurrency/bitcurrency.git
+Vcs-Browser: http://github.com/bitcurrency/bitcurrency
 
 Package: bitcurrencyd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Novacoin is a free open source peer-to-peer electronic cash system that
+ BitCurrency is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -45,7 +45,7 @@ Package: bitcurrency-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Novacoin is a free open source peer-to-peer electronic cash system that
+ BitCurrency is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to

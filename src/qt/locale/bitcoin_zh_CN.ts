@@ -18,7 +18,7 @@ Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014 The BlackCoin developers
 Copyright © 2014 The BitCurrency developers</source>
         <translation>版权所有 © 2009-2014 比特币Bitcoin开发组
-版权所有 © 2012-2014 新星币Novacoin开发组
+版权所有 © 2012-2014 新星币BitCurrency开发组
 版权所有 © 2014 黑币BitCurrency开发组</translation>
     </message>
     <message>
