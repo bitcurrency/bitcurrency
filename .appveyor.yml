@@ -1,6 +1,5 @@
 version: '{build}'
 
-
 branches:
   only:
     - master
@@ -19,8 +18,8 @@ init:
   - git config --global core.autocrlf input
 
 build_script:
-  - set PATH=C:\Qt\5.11.0\%qt%\;C:\Qt\5.11.0\%qt%\bin;C:\Qt\5.11.0\%qt%\%qt%\msys\1.0\bin;%PATH%
+  - set CXXFLAGS="-IC:\Libraries\boost_1_65_1\include  -DWIN32 -DUNICODE -D_UNICODE -municode"
+  - set PATH=C:\Qt\5.11.0\%qt%\;C:\Qt\5.11.0\%qt%\bin;C:\Qt\5.11.0\%qt%\%qt%\msys\1.0\bin;c:\MinGW\bin;c:\MinGW\msys\1.0\bin;%PATH%;
   - cd \projects\bitcurrency
   - qmake bitcurrency-qt.pro
-  - mingw32-make
   - make
