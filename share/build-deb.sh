@@ -4,6 +4,7 @@
 
 PACKAGE_DIR=$1
 DEB_OUTPUT_DIR=$2
+ARCH=$3
 
 NAME_PACKAGE="Package"
 NAME_VERSION="Version"
@@ -25,12 +26,12 @@ echo
 
 # Build packages
 echo "* Build package ..."
-dpkg -b "./${PACKAGE_DIR}" "${DEB_OUTPUT_DIR}/${packageName}_${packageBuildNr}.deb"
+dpkg -b "./${PACKAGE_DIR}" "${DEB_OUTPUT_DIR}/${packageName}_${packageBuildNr}_${ARCH}.deb"
 echo
 
 # Build md5sum of deb-file
 echo "* Build md5sum-file ..."
-md5sum "${DEB_OUTPUT_DIR}/${packageName}_${packageBuildNr}.deb" > "${DEB_OUTPUT_DIR}/${packageName}_${packageBuildNr}.deb.md5sum"
+md5sum "${DEB_OUTPUT_DIR}/${packageName}_${packageBuildNr}_${ARCH}.deb" > "${DEB_OUTPUT_DIR}/${packageName}_${packageBuildNr}_${ARCH}.deb.md5sum"
 echo
 
 echo "Finished."
