@@ -14,16 +14,17 @@ platform:
 
 environment:
   matrix:
-  - BUILD: Qt5.3.2-mingw32
-    QTDIR: C:\Qt\5.3\mingw482_32
-    COMPILERDIR: C:\Qt\Qt5.3.2\Tools\mingw482_32\bin
-    QMAKESPEC: win32-g++
-    PRO_MAKE: mingw32-make
-    PRO_CHECK: mingw32-make check
+    - BUILD: Qt5.3.2-mingw32
+      QTDIR: C:\Qt\5.3\mingw482_32
+      COMPILERDIR: C:\Qt\Qt5.3.2\Tools\mingw482_32\bin
+      QMAKESPEC: win32-g++
+      PRO_MAKE: mingw32-make
+      PRO_CHECK: mingw32-make check
 
 before_build:
   - set PATH=%QTDIR%;%QTDIR%\bin;%PATH%
 
 build_script:
+  - echo %QTDIR%
   - cd %QTDIR%
   - DIR /S qmake*.*
