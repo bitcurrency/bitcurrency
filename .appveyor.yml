@@ -3,20 +3,28 @@ version: '{build}'
 init:
   - git config --global core.autocrlf input
 
+branches:
+  only:
+    - master
+
 platform:
   - x86
 
+
+
 environment:
   matrix:
-  - QT5: C:\Qt\5.10.1
-    MINGW: C:\Qt\5.10.1\mingw53_32
-    MSYS: C:\Qt\5.10.1\mingw53_32\msys\1.0
-    use_cmake: "false"
+  - BUILD: Qt5.3.2-mingw32
+    QTDIR: 'C:\Qt\Qt5.3.2\5.3\mingw482_32'
+    COMPILERDIR: 'C:\Qt\Qt5.3.2\Tools\mingw482_32\bin'
+    QMAKESPEC: win32-g++
+    PRO_MAKE: mingw32-make
+    PRO_CHECK: mingw32-make check
 
 before_build:
   - set PATH=%MINGW%\bin;%QT5%;%QT5%\bin;%MSYS%\bin;%PATH%
-  - cd \projects\bitcurrency
 
 build_script:
-  - qmake bitcurrency-qt.pro
+  - cd \projects\bitcurrency
+  - %QTDIR%\qmake.exe .\bitcurrency-qt.pro
   - mingw32-make
