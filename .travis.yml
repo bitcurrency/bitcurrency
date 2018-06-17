@@ -29,7 +29,7 @@ matrix:
         - make -f makefile.unix
         - popd
         - qmake && make
-        - ./share/build-deb.sh `pwd`/contrib/debian `pwd`/
+        - ./share/build-deb.sh `pwd`/contrib/debian `pwd`/ "X86"
         - ls -l
 
     # works on Precise and Trusty
@@ -58,5 +58,5 @@ matrix:
         - make -f makefile.unix
         - popd
         - qmake && make
-        - ./share/build-deb.sh `pwd`/contrib/debian `pwd`/
+        - ./share/build-deb.sh `pwd`/contrib/debian `pwd`/ "X86_64"
         - ls -l
