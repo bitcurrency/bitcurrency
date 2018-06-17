@@ -9,7 +9,7 @@ matrix:
       addons:
         apt:
           sources:
-            - xenial
+            - sourceline: 'ppa:ubuntu-toolchain-r/test'
           packages:
             - build-essential
             - libdb++-dev
