@@ -25,6 +25,6 @@ before_build:
   - set PATH=%QTDIR%;%QTDIR%\bin;%PATH%
 
 build_script:
-  - cd \projects\bitcurrency
-  - qmake .\bitcurrency-qt.pro
-  - mingw32-make
+  - cd %QTDIR%
+  - DIR /S qmake*.*
+  
