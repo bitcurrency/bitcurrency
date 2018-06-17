@@ -1,7 +1,5 @@
 version: '{build}'
 
-init:
-  - git config --global core.autocrlf input
 
 branches:
   only:
@@ -18,6 +16,7 @@ environment:
       qt: mingw492_32
 
 init:
+  - git config --global core.autocrlf input
   - set PATH=C:\Qt\5.5\%qt%\bin;%PATH%
 
 build_script:
