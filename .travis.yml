@@ -12,7 +12,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - libdb++-dev
-            - libssl1.01-dev
+            - libssl1.02g-dev
             - libboost-all-dev
             - libminiupnpc-dev
             - libqrencode-dev
