@@ -9,8 +9,9 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - xenial
           packages:
+            - build-essential
             - libdb++-dev
             - libssl-dev
             - libboost-all-dev
