@@ -1,24 +1,23 @@
 version: '{build}'
 
 init:
-- git config --global core.autocrlf input
+  - git config --global core.autocrlf input
 
 platform:
   - x86
-  - amd64
 
 environment:
   matrix:
   - QT5: C:\Qt\5.3\
-    MINGW: C:\Qt\Tools\mingw482_32
+    MINGW: C:\Qt\Tools\mingw492_32
     use_cmake: "false"
+    fast_finish: true
 
-matrix:
-  fast_finish: true
 
 before_build:
-- set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
+  - set PATH=%MINGW%\bin;%QT5%;%QT5%\bin;%PATH%
+  - cd \projects\bitcurrency
 
 build_script:
-- qmake
-- make
+  - qmake
+  - make
