@@ -20,6 +20,5 @@ before_build:
   - cd \projects\bitcurrency
 
 build_script:
-  - mingw-get install mingw-gcc-g++
   - qmake
   - make
