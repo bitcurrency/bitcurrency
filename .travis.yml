@@ -28,4 +28,5 @@ matrix:
 
 before_install:
     - cd src && make -f makefile.unix
-    - qtmake && make
+    - pwd
+    - qmake && make
