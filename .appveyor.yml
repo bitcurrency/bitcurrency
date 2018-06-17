@@ -8,8 +8,8 @@ platform:
 
 environment:
   matrix:
-  - QT5: C:\Qt\5.3\
-    MINGW: C:\Qt\Tools\mingw492_32
+  - QT5: C:\Qt\5.10.1\
+    MINGW: C:\Qt\5.10.1\mingw53_32
     use_cmake: "false"
     fast_finish: true
 
