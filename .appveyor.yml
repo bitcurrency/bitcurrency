@@ -10,17 +10,16 @@ platform:
 
 environment:
   matrix:
-    - build: Qt5.3.2-mingw32
+    - build: Qt5.11.0-mingw32
       name: win32
       platform: mingw
-      qt: mingw492_32
+      qt: mingw53_32
 
 init:
   - git config --global core.autocrlf input
-  - set PATH=C:\Qt\5.5\%qt%\bin;%PATH%
 
 build_script:
-  - if %platform%==mingw set PATH=C:\Qt\5.5\%qt%\bin;C:\Qt\Tools\mingw492_32\bin;%PATH%
+  - set PATH=C:\Qt\5.11.0\%qt%\;C:\Qt\5.11.0\%qt%\bin;C:\Qt\5.11.0\%qt%\%qt%\msys\1.0\bin;%PATH%
   - cd \projects\bitcurrency
   - qmake bitcurrency-qt.pro
   - mingw32-make
