@@ -1,11 +1,17 @@
 sudo: true
 language: cpp
 
+env:
+  - ARCH=x86_64
+  - ARCH=i686
+
+
 matrix:
   include:
     # works on Precise and Trusty
     - os: linux
       dist: xenial
+      env: ARCH=i686
       addons:
         apt:
           sources:
@@ -22,11 +28,36 @@ matrix:
             - qt5-qmake
             - qtbase5-dev-tools
             - qttools5-dev-tools
-      env:
-         - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5 "
 
+      script:
+        - pushd src
+        - make -f makefile.unix
+        - popd
+        - qmake && make
 
-before_install:
-    - cd src && make -f makefile.unix
-    - pwd
-    - qmake && make
+    # works on Precise and Trusty
+    - os: linux
+      dist: xenial
+      env: ARCH=x86_64
+      addons:
+        apt:
+          sources:
+            - sourceline: 'ppa:ubuntu-toolchain-r/test'
+          packages:
+            - build-essential
+            - libdb++-dev
+            - libssl-dev
+            - libboost-all-dev
+            - libminiupnpc-dev
+            - libqrencode-dev
+            - libsodium-dev
+            - qt5-default
+            - qt5-qmake
+            - qtbase5-dev-tools
+            - qttools5-dev-tools
+
+      script:
+        - pushd src
+        - make -f makefile.unix
+        - popd
+        - qmake && make
