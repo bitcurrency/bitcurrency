@@ -8,7 +8,7 @@ ARCH=$3
 
 NAME_PACKAGE="Package"
 NAME_VERSION="Version"
-DEBIAN_CONTROL_FILE="DEBIAN/control"
+DEBIAN_CONTROL_FILE="control"
 
 # Get package size
 packageSize=$(du -s "${PACKAGE_DIR}/" | cut -f 1)
