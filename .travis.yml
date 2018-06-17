@@ -5,12 +5,12 @@ matrix:
   include:
     # works on Precise and Trusty
     - os: linux
+      dist: xenial
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-5
             - libdb++-dev
             - libssl1.01-dev
             - libboost-all-dev
