@@ -15,16 +15,16 @@ platform:
 environment:
   matrix:
   - BUILD: Qt5.3.2-mingw32
-    QTDIR: 'C:\Qt\Qt5.3.2\5.3\mingw482_32'
-    COMPILERDIR: 'C:\Qt\Qt5.3.2\Tools\mingw482_32\bin'
+    QTDIR: C:\Qt\Qt5.3.2\5.3\mingw482_32
+    COMPILERDIR: C:\Qt\Qt5.3.2\Tools\mingw482_32\bin
     QMAKESPEC: win32-g++
     PRO_MAKE: mingw32-make
     PRO_CHECK: mingw32-make check
 
 before_build:
-  - set PATH=%MINGW%\bin;%QT5%;%QT5%\bin;%MSYS%\bin;%PATH%
+  - set PATH=%QTDIR%;%QTDIR%\bin;%PATH%
 
 build_script:
   - cd \projects\bitcurrency
-  - %QTDIR%\qmake.exe .\bitcurrency-qt.pro
+  - qmake.exe .\bitcurrency-qt.pro
   - mingw32-make
