@@ -20,5 +20,6 @@ before_build:
   - cd \projects\bitcurrency
 
 build_script:
-  - qmake
+  - dir /S %QT5%
+  - dir /S %MINGW%\bin
   - make
