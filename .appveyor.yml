@@ -15,7 +15,7 @@ platform:
 environment:
   matrix:
   - BUILD: Qt5.3.2-mingw32
-    QTDIR: C:\Qt\Qt5.3.2\5.3\mingw482_32
+    QTDIR: C:\Qt\5.3\mingw482_32
     COMPILERDIR: C:\Qt\Qt5.3.2\Tools\mingw482_32\bin
     QMAKESPEC: win32-g++
     PRO_MAKE: mingw32-make
@@ -27,4 +27,3 @@ before_build:
 build_script:
   - cd %QTDIR%
   - DIR /S qmake*.*
-  
