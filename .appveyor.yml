@@ -26,5 +26,5 @@ before_build:
 
 build_script:
   - cd \projects\bitcurrency
-  - qmake.exe .\bitcurrency-qt.pro
+  - qmake .\bitcurrency-qt.pro
   - mingw32-make
