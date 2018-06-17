@@ -9,7 +9,7 @@ platform:
 
 environment:
   matrix:
-  - QT5: C:\Qt\5.3\mingw482_32
+  - QT5: C:\Qt\5.3\
     MINGW: C:\Qt\Tools\mingw482_32
     use_cmake: "false"
 
@@ -22,5 +22,3 @@ before_build:
 build_script:
 - qmake
 - make
-
-- bitcurrency-qt.exe
