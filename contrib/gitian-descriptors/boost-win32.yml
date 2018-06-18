@@ -1,10 +1,10 @@
 ---
 name: "boost"
 suites:
-- "lucid"
+- "xenial"
 architectures:
 - "i386"
-packages: 
+packages:
 - "mingw32"
 - "faketime"
 - "zip"

@@ -1,10 +1,10 @@
 ---
 name: "qt"
 suites:
-- "lucid"
+- "xenial"
 architectures:
 - "i386"
-packages: 
+packages:
 - "mingw32"
 - "zip"
 - "faketime"

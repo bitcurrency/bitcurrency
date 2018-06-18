@@ -1,10 +1,10 @@
 ---
 name: "bitcoin-deps"
 suites:
-- "lucid"
+- "xenial"
 architectures:
 - "i386"
-packages: 
+packages:
 - "mingw32"
 - "git-core"
 - "zip"
