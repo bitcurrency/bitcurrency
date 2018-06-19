@@ -3,7 +3,7 @@ name: "bitcurrency"
 suites:
 - "xenial"
 architectures:
-- "i386"
+- "amd64"
 packages:
 - "libdb++-dev"
 - "qt4-qmake"
@@ -17,6 +17,7 @@ packages:
 - "unzip"
 - "pkg-config"
 - "libpng12-dev"
+- "sodium-dev"
 reference_datetime: "2011-01-30 00:00:00"
 remotes:
 - "url": "https://github.com/bitcurrency/bitcurrency.git"
