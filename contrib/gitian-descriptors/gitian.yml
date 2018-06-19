@@ -4,9 +4,8 @@ suites:
 - "xenial"
 architectures:
 - "i386"
-- "amd64"
 packages:
-- "libdb4.8++-dev"
+- "libdb++-dev"
 - "qt4-qmake"
 - "libqt4-dev"
 - "libboost-system-dev"
@@ -20,17 +19,17 @@ packages:
 - "libpng12-dev"
 reference_datetime: "2011-01-30 00:00:00"
 remotes:
-- "url": "https://github.com/zeded/bitcurrency.git"
+- "url": "https://github.com/bitcurrency/bitcurrency.git"
   "dir": "bitcurrency"
 files:
-- "miniupnpc-1.6.tar.gz"
+- "miniupnpc-1.8.tar.gz"
 - "qrencode-3.2.0.tar.bz2"
 script: |
   INSTDIR="$HOME/install"
   export LIBRARY_PATH="$INSTDIR/lib"
   #
-  tar xzf miniupnpc-1.6.tar.gz
-  cd miniupnpc-1.6
+  tar xzf miniupnpc-1.8.tar.gz
+  cd miniupnpc-1.8
   INSTALLPREFIX=$INSTDIR make $MAKEOPTS install
   cd ..
   #
