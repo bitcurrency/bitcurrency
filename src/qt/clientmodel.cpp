@@ -116,7 +116,7 @@ void ClientModel::updateAlert(const QString &hash, int status)
         CAlert alert = CAlert::getAlertByHash(hash_256);
         if(!alert.IsNull())
         {
-            emit message(tr("Network Alert"), QString::fromStdString(alert.strStatusBar), false, CClientUIInterface::ICON_ERROR);
+            emit message(tr("Network Alert"), QString(alert.strStatusBar.c_str()), false, CClientUIInterface::ICON_ERROR);
         }
     }
 
@@ -155,7 +155,7 @@ QString ClientModel::formatFullVersion() const
 
 QString ClientModel::formatBuildDate() const
 {
-    return QString::fromStdString(CLIENT_DATE);
+    return QString(CLIENT_DATE.c_str());
 }
 
 bool ClientModel::isReleaseVersion() const
@@ -165,7 +165,7 @@ bool ClientModel::isReleaseVersion() const
 
 QString ClientModel::clientName() const
 {
-    return QString::fromStdString(CLIENT_NAME);
+    return QString::fromStdString(CLIENT_NAME.c_str());
 }
 
 QString ClientModel::formatClientStartupTime() const
@@ -182,10 +182,9 @@ static void NotifyNumConnectionsChanged(ClientModel *clientmodel, int newNumConn
 
 static void NotifyAlertChanged(ClientModel *clientmodel, const uint256 &hash, ChangeType status)
 {
-    qDebug() << "NotifyAlertChanged : " + QString::fromStdString(hash.GetHex()) + " status=" + QString::number(status);
     QMetaObject::invokeMethod(clientmodel, "updateAlert", Qt::QueuedConnection,
-                              Q_ARG(QString, QString::fromStdString(hash.GetHex())),
-                              Q_ARG(int, status));
+                            Q_ARG(QString, QString::fromStdString(hash.GetHex())),
+                            Q_ARG(int, status));
 }
 
 void ClientModel::subscribeToCoreSignals()

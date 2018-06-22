@@ -3,11 +3,16 @@ TARGET = bitcurrency-qt
 VERSION = 1.2.5
 INCLUDEPATH += src src/json src/qt
 QT += network
-DEFINES += ENABLE_WALLET UNICODE _UNICODE unicode
+QMAKE_CXXFLAGS += -std=c++0x
+#DEFINES += ENABLE_WALLET UNICODE _UNICODE unicode
+DEFINES += ENABLE_WALLET 
 DEFINES += BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
 CONFIG += thread
 CONFIG += unicode
+CONFIG += c++0x
+CONFIG += exceptions
+CONFIG += stl
 
 greaterThan(QT_MAJOR_VERSION, 4) {
     QT += widgets

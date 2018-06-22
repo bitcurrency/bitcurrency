@@ -51,8 +51,8 @@ static void ThreadSafeMessageBox(const std::string& message, const std::string& 
         // In case of modal message, use blocking connection to wait for user to click a button
         QMetaObject::invokeMethod(guiref, "message",
                                    modal ? GUIUtil::blockingGUIThreadConnection() : Qt::QueuedConnection,
-                                   Q_ARG(QString, QString::fromStdString(caption)),
-                                   Q_ARG(QString, QString::fromStdString(message)),
+                                   Q_ARG(QString, QString(caption.c_str())),
+                                   Q_ARG(QString, QString(message.c_str())),
                                    Q_ARG(bool, modal),
                                    Q_ARG(unsigned int, style));
     }
@@ -82,7 +82,7 @@ static void InitMessage(const std::string &message)
 {
     if(splashref)
     {
-        splashref->showMessage(QString::fromStdString(message), Qt::AlignBottom|Qt::AlignHCenter, QColor(232,186,63));
+        splashref->showMessage(QString(message.c_str()), Qt::AlignBottom|Qt::AlignHCenter, QColor(232,186,63));
         QApplication::instance()->processEvents();
     }
     LogPrintf("init message: %s\n", message);
@@ -93,7 +93,7 @@ static void InitMessage(const std::string &message)
  */
 static std::string Translate(const char* psz)
 {
-    return QCoreApplication::translate("bitcoin-core", psz).toStdString();
+    return std::string((QCoreApplication::translate("bitcoin-core", psz)).toAscii());
 }
 
 /* Handle runaway exceptions. Shows a message box with the problem and quits the program.
@@ -101,7 +101,7 @@ static std::string Translate(const char* psz)
 static void handleRunawayException(std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
-    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. BitCurrency can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
+    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. BitCurrency can no longer continue safely and will quit.") + QString("\n\n") + QString(strMiscWarning.c_str()));
     exit(1);
 }
 
@@ -161,7 +161,7 @@ int main(int argc, char *argv[])
         // This message can not be translated, as translation is not initialized yet
         // (which not yet possible because lang=XX can be overridden in bitcoin.conf in the data directory)
         QMessageBox::critical(0, "BitCurrency",
-                              QString("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
+                              QString("Error: Specified data directory \"%1\" does not exist.").arg(QString(mapArgs["-datadir"].c_str())));
         return 1;
     }
     ReadConfigFile(mapArgs, mapMultiArgs);
@@ -179,7 +179,8 @@ int main(int argc, char *argv[])
     OptionsModel optionsModel;
 
     // Get desired locale (e.g. "de_DE") from command line or use system locale
-    QString lang_territory = QString::fromStdString(GetArg("-lang", QLocale::system().name().toStdString()));
+    std::string lang_param = GetArg(std::string("-lang"), QLocale::system().name().toStdString());
+    QString lang_territory = QString(lang_param.c_str());
     QString lang = lang_territory;
     // Convert to "de" only by truncating "_DE"
     lang.truncate(lang_territory.lastIndexOf('_'));

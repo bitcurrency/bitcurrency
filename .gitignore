@@ -1,5 +1,18 @@
+# Misc
+release/
 build
+go
+
+# Binaries
 bitcurrencyd
 bitcurrency-qt
+
+# Files created by qmake
 qrc_bitcoin.cpp
 Makefile
+Makefile.Debug
+Makefile.Release
+.qmake.stash
+bitcurrency-qt_plugin_import.cpp
+object_script.bitcurrency-qt.Debug
+object_script.bitcurrency-qt.Release
