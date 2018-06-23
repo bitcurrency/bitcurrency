@@ -10,9 +10,9 @@ CUR_DIR=`pwd`
 
 sudo apt-get install -y qt5-default qt5-qmake qtbase5-dev-tools qttools5-dev-tools \
     build-essential git libboost-dev libboost-system-dev \
-    libboost-all-dev libssl-dev libdb++-dev libminiupnpc-dev libqrencode-dev
-
-
+    libboost-all-dev libssl-dev libdb++-dev libminiupnpc-dev libqrencode-dev \
+    autoconf automake autopoint bison flex gperf intltool libtool-bin \
+    ruby scons unzip p7zip-full libgdk-pixbuf2.0-dev
 
 # Get BC from github if we don't already have it
 if [ ! -d "$CUR_DIR/bitcurrency" ]; then
