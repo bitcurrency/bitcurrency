@@ -1,11 +1,12 @@
 ---
 name: "bitcurrency"
 suites:
-- "xenial"
+- "lucid"
 architectures:
+- "i386"
 - "amd64"
-packages:
-- "libdb++-dev"
+packages: 
+- "libdb4.8++-dev"
 - "qt4-qmake"
 - "libqt4-dev"
 - "libboost-system-dev"
@@ -17,20 +18,19 @@ packages:
 - "unzip"
 - "pkg-config"
 - "libpng12-dev"
-- "sodium-dev"
 reference_datetime: "2011-01-30 00:00:00"
 remotes:
-- "url": "https://github.com/bitcurrency/bitcurrency.git"
+- "url": "https://github.com/zeded/bitcurrency.git"
   "dir": "bitcurrency"
 files:
-- "miniupnpc-1.8.tar.gz"
+- "miniupnpc-1.6.tar.gz"
 - "qrencode-3.2.0.tar.bz2"
 script: |
   INSTDIR="$HOME/install"
   export LIBRARY_PATH="$INSTDIR/lib"
   #
-  tar xzf miniupnpc-1.8.tar.gz
-  cd miniupnpc-1.8
+  tar xzf miniupnpc-1.6.tar.gz
+  cd miniupnpc-1.6
   INSTALLPREFIX=$INSTDIR make $MAKEOPTS install
   cd ..
   #

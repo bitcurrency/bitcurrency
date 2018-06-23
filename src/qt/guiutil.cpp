@@ -153,7 +153,7 @@ QString HtmlEscape(const QString& str, bool fMultiLine)
 
 QString HtmlEscape(const std::string& str, bool fMultiLine)
 {
-    return HtmlEscape(QString(str.c_str()), fMultiLine);
+    return HtmlEscape(QString::fromStdString(str), fMultiLine);
 }
 
 void copyEntryData(QAbstractItemView *view, int column, int role)
@@ -494,3 +494,4 @@ void SetBlackThemeQSS(QApplication& app)
 }
 
 } // namespace GUIUtil
+

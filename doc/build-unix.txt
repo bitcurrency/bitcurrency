@@ -90,8 +90,8 @@ symbols, which reduces the executable size by about 90%.
 
 miniupnpc
 ---------
-tar -xzvf miniupnpc-1.8.tar.gz
-cd miniupnpc-1.8
+tar -xzvf miniupnpc-1.6.tar.gz
+cd miniupnpc-1.6
 make
 sudo su
 make install

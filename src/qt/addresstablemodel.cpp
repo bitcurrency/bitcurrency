@@ -374,7 +374,7 @@ QString AddressTableModel::addRow(const QString &type, const QString &label, con
         LOCK(wallet->cs_wallet);
         wallet->SetAddressBookName(CBitcoinAddress(strAddress).Get(), strLabel);
     }
-    return QString(strAddress.c_str());
+    return QString::fromStdString(strAddress);
 }
 
 bool AddressTableModel::removeRows(int row, int count, const QModelIndex &parent)
@@ -404,7 +404,7 @@ QString AddressTableModel::labelForAddress(const QString &address) const
         std::map<CTxDestination, std::string>::iterator mi = wallet->mapAddressBook.find(address_parsed.Get());
         if (mi != wallet->mapAddressBook.end())
         {
-            return QString(mi->second.c_str());
+            return QString::fromStdString(mi->second);
         }
     }
     return QString();
