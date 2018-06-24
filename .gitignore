@@ -2,6 +2,7 @@
 release/
 build
 go
+build_bc
 
 # Binaries
 bitcurrencyd
