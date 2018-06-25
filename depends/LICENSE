@@ -1,0 +1,14 @@
+The files contained herein are included to comply with the license terms contained within each. 
+
+Where portions are included, such as configuration files, no rights of the original developers are abrogated, 
+and the intent is to make the entire source code for this project available to best comply with the terms of 
+each license.
+
+The following packages are included:
+OpenSSL-1.0.1f		Copyright (c) 1998-2011 The OpenSSL Project.  All rights reserved.
+db-4.8.30.NC		Copyright (c) 1990-2009 Oracle.  All rights reserved.
+miniupnpc-1.9		Copyright (c) 2005-2011, Thomas BERNARD All rights reserved.
+
+For further details, please see the LICENSE files of each of the above in the directory where this file is located.
+
+
