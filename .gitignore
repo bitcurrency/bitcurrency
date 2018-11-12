@@ -5,6 +5,7 @@ go
 build_bc
 
 # Binaries
+BitCurrency-Qt.app
 bitcurrencyd
 bitcurrency-qt
 
